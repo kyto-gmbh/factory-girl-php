@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: cebeling
- * Date: 29/05/15
- * Time: 17:33
- */
 
 namespace FactoryGirl\Tests\Provider\Doctrine\Fixtures;
 
@@ -12,8 +6,13 @@ namespace FactoryGirl\Tests\Provider\Doctrine\Fixtures;
 use FactoryGirl\Provider\Doctrine\DateIntervalHelper;
 use FactoryGirl\Provider\Doctrine\FieldDef;
 
+/**
+ * Class TimeTest
+ * @package FactoryGirl\Tests\Provider\Doctrine\Fixtures
+ */
 class TimeTest extends TestCase
 {
+
     public function testGetTimePast()
     {
         $time = new \DateTime();
@@ -22,13 +21,19 @@ class TimeTest extends TestCase
         $time->add($interval);
         $this->assertEquals(
             $time->getTimestamp(),
-            FieldDef::past()->days(2)->months(1)->years(3)->get());
+            FieldDef::past()->days(2)->months(1)->years(3)->get(),
+            'Error getting unix timestamp'
+        );
         $this->assertEquals(
             $time,
-            FieldDef::past()->days(2)->months(1)->years(3)->get(DateIntervalHelper::DATE_TIME));
+            FieldDef::past()->days(2)->months(1)->years(3)->get(DateIntervalHelper::DATE_TIME),
+            'Error getting date time'
+        );
         $this->assertEquals(
             $time->format('d-m-y'),
-            FieldDef::past()->days(2)->months(1)->years(3)->get(DateIntervalHelper::STRING));
+            FieldDef::past()->days(2)->months(1)->years(3)->get(DateIntervalHelper::DATE_STRING),
+            'Error getting string'
+        );
 
     }
 
@@ -45,7 +50,7 @@ class TimeTest extends TestCase
             FieldDef::future()->days(2)->months(1)->years(3)->get(DateIntervalHelper::DATE_TIME));
         $this->assertEquals(
             $time->format('d-m-y'),
-            FieldDef::future()->days(2)->months(1)->years(3)->get(DateIntervalHelper::STRING));
+            FieldDef::future()->days(2)->months(1)->years(3)->get(DateIntervalHelper::DATE_STRING));
 
     }
 
