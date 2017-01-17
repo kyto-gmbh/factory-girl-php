@@ -1,5 +1,5 @@
 {
-    "name": "kyto-gmbh/factory-girl-php",
+    "name": "breerly/factory-girl-php",
     "type": "library",
     "description": "Fixture replacement for focused and readable tests - A PHP port of Thoughtbot's Ruby Factory Girl",
     "keywords": [
