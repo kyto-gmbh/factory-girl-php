@@ -1,5 +1,5 @@
 {
-    "name": "breerly/factory-girl-php",
+    "name": "kyto-gmbh/factory-girl-php",
     "type": "library",
     "description": "Fixture replacement for focused and readable tests - A PHP port of Thoughtbot's Ruby Factory Girl",
     "keywords": [
@@ -16,13 +16,17 @@
         {
             "name": "Grayson Koonce",
             "email": "breerly@gmail.com"
+        },
+        {
+            "name": "Kyto GmbH",
+            "email": "it@kyto.com"
         }
     ],
     "require": {
         "php": ">=5.4.0",
         "doctrine/orm": ">=2.2.1,<2.6-dev",
         "doctrine/dbal": ">=2.2.1,<2.6-dev",
-        "doctrine/common": ">=2.2.1,<2.6-dev"
+        "doctrine/common": ">=2.2.1,<2.8-dev"
     },
     "autoload": {
         "psr-0": {
